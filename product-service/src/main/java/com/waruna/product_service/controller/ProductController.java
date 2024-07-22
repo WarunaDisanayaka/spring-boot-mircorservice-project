@@ -16,12 +16,14 @@ public class ProductController {
 
     private final ProductService productService;
 
+//    Create product
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createProduct(@RequestBody ProductRequest productRequest){
         productService.createProduct(productRequest);
     }
 
+//    Get all products
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ProductResponse>getAllProducts(){
